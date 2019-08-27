@@ -1,8 +1,11 @@
 // entry -> output
 // const path = require('path'); // access module code that built in node function
 // console.log(path.join(__dirname,'public')); // this show my current project location
-
-module.exports ={ 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+module.exports = (env) => { 
+    const isProduction = env === 'production';
+    // const CSSEXTract = new MiniCssExtractPlugin('style.css');
+    return {
     mode: 'none', // it use to define it is production or development mode
     entry: './src/app2.js',
     output:{
@@ -16,17 +19,41 @@ module.exports ={
             test:/\.js$/,
             exclude:/node_modules/
         },{
-            use:[
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ],
-            test:/\.s?css$/
+            test:/\.s?css$/,
+            use: [
+                {
+                    loader:MiniCssExtractPlugin.loader
+                },
+                {
+                    loader:'css-loader',
+                    options:{
+                        sourceMap: true
+                    }
+                },
+               {
+                   loader: 'sass-loader',
+                   options:{
+                       sourceMap:true
+                   }
+               }
+            ]
+            // [
+            //     'style-loader',
+            //     'css-loader',
+            //     'sass-loader'
+            // ]           
         }]
     },
-    devtool: 'cheap-module-eval-source-map',
+    plugins:[
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
+        })
+    ],
+    devtool: isProduction? 'source-map' : 'inline-source-map',
     devServer: {
         contentBase: __dirname + '/public',
         historyApiFallback: true
+    }
+
     }
 };
