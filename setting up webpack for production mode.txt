@@ -22,6 +22,9 @@
   5-4 => put bundel.js and js.map and styles.css and .css.map in .ignore file
        beacuse all these file get generated(created) when we run webpack 
 
-
+6-push our updates to our github repositiory 
+7- push our app to heroku => git push heroku master
+8- it will give you an error because of yarn so you have to remove it => npm unistall -g yarn
+9- remobe bundel folder and run npm install and change heroku-postbuild to npm
 
 

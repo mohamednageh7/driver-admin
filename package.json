@@ -9,8 +9,8 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "start":"node server/server.js"  ,
-    "heroku-postbuild": "yarn run buils:prod",
+    "start": "nw server/server.js",
+    "heroku-postbuild": "yarn run build:prod",
     "build-babel": "babel src/app2.js --out-file=public/script/app.js --presets=env,react --watch"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
+    "nw": "^0.40.2",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^20.3.0",
