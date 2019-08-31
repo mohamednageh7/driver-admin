@@ -1,2 +1,27 @@
 // webpack production mode
 1-write env in package.json file and webpack confign file
+
+// remove my stle file from bundel.js
+1- install css extract plugin  =>  mini-css-extract-plugin
+
+// express server => server our public directory in production
+1- this will run trought node terminal command
+2- this is a single file written in node 
+3- first tell it where the file your index is in
+
+
+// deploy my project on heroko
+1-install heroku cli => download heroku and install it
+2-heroku --version => to know the version of heroku in your machine
+3-heroku login => to log in your heroku account
+4-creat a project on heroku => heroku create (app name)
+5- we want to teach heroku how to start our app
+  5-1 => add start on my pakage.json file
+  5-2 => create a port variable on my server.js file 
+  5-3 => heroku-postbuild it run after heroku install all my dependencies
+  5-4 => put bundel.js and js.map and styles.css and .css.map in .ignore file
+       beacuse all these file get generated(created) when we run webpack 
+
+
+
+

@@ -9,7 +9,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 
 const store = configureStore(); // this will give us the access to everything in store ( store dispatch, subscribe, store getstate
-console.log('test');
+
 const jsx =(
     <Provider store={store}>
         <AppRouter />
