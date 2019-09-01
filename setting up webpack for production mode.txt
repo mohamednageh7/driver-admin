@@ -24,7 +24,10 @@
 
 6-push our updates to our github repositiory 
 7- push our app to heroku => git push heroku master
-8- it will give you an error because of yarn so you have to remove it => npm unistall -g yarn
-9- remobe bundel folder and run npm install and change heroku-postbuild to npm
+8- it will give you an error because of yarn so you have to remove it =>
+a- try to install nodewebkit => yarn add nw
+
+<!-- to clean your npm cach to solve core-js prolem -->
+npm cache clean --force
 
 
