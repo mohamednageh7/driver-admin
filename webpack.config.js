@@ -10,7 +10,7 @@ module.exports = (env) => {
     entry: './src/app2.js',
     output:{
         //path:path.join(__dirname,'public') or 
-        path: __dirname + '/public',     
+        path: __dirname + '/public/dist',     
         filename:'bundel.js' // i can change it to whatever i want 
     },
     module:{
@@ -52,7 +52,8 @@ module.exports = (env) => {
     devtool: isProduction? 'source-map' : 'inline-source-map',
     devServer: {
         contentBase: __dirname + '/public',
-        historyApiFallback: true
+        historyApiFallback: true,
+        publicPath: '/dist/'
     }
 
     }

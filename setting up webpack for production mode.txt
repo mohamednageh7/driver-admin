@@ -24,10 +24,13 @@
 
 6-push our updates to our github repositiory 
 7- push our app to heroku => git push heroku master
-8- it will give you an error because of yarn so you have to remove it =>
-a- try to install nodewebkit => yarn add nw
+8- it will give you an error so if you use yarn => git rm yarn.lock , and run npm install
+
 
 <!-- to clean your npm cach to solve core-js prolem -->
 npm cache clean --force
+
+// remove the dependences we are not using from my pakage.json file 
+1- install chalk --dev
 
 
