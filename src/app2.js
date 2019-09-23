@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter'; // this is export as default const
 import configureStore from './store/configStore';
 import {Provider} from 'react-redux'; // this is just export const
+import {startSetDriver} from './actions/driverListActions';
 import 'normalize.css/normalize.css';
 import './style/style.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 
 const store = configureStore(); // this will give us the access to everything in store ( store dispatch, subscribe, store getstate
@@ -16,7 +18,12 @@ const jsx =(
     </Provider>
 );
 
-ReactDOM.render(jsx , document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p> , document.getElementById('app'));
+
+store.dispatch(startSetDriver()).then(() => {
+    ReactDOM.render(jsx , document.getElementById('app'));
+});
+
 
 
 // import {visibleDriver} from './selector/visibleDriver';

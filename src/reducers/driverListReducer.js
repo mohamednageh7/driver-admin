@@ -22,6 +22,9 @@ const driverListReducerDefaultState = [];
             }
         });
 
+        case 'SET_DRIVER':
+        return action.driverList;
+
         default:
         return state;
     }

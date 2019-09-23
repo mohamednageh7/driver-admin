@@ -1,0 +1,67 @@
+// creat project in firebas
+1- go to firebase console
+2- click on creat new project
+3- click on database tab and click on realtime data base
+4- change rule from flase to true so to be able to change it
+5- click on overview(home) and ckick on (</>) to use firbase
+o your website
+6- write nick name to your web app and click register
+7-install firebase => npm install firebase
+8- create a firebase.js file to connect the firebase with it and then
+we can import what we have on this file in any of my file to connect then with firebase
+
+// connect firebase with my firebase.js file
+1-import * as firebase from 'firebase/app' => this take all the name export from firbase and 
+dump then with the new variable name firebase because firebase don't have default export
+2- import the package you want to use => import 'firebase/database'
+3- take config object in firebase to your firebase.js file
+4-test our connection => 
+
+   4-1 add this in your firebase.js 
+       // Initialize Firebase
+         firebase.database().ref().set({
+            name:'mohamed nageh'
+         });
+
+     4-2 import it in your app.js file to run it 
+         import './firebase/firebase'
+5- your name should appear on firebase database
+
+// firebase.database().ref().set() => what this mean
+
+1- firebase.database() => the place in datebase that i want to go to get the data i need
+so it can be firebase.auth() for example
+
+2- ref() => it mean refrence so if i didn't write any argument in it , it will
+make a refrence to the root of database but if i have more than one collection
+of data in my database i will write a refrence so it will be like ref('tables')
+
+3- set() => this use to change or update my data in the refrence i mentioned above
+
+// ES6 promises
+1-const promise = new promise((resolve,reject) => {}) => to create a promise 
+
+use then (()=>{}) => if succed
+use catch((error)=>{}) => if failed
+
+// fetching data from database
+1-we use once('value') => to get the data one time
+2- we use on('value', function()) => this will triger every time my data changed
+3- we use off() => to stop data change watching mode in database
+
+
+// array data in database
+1- you need to know firbase don't save array it will just turn it to object
+2-database.ref('notes').push() => this will push my data inside 
+the notes object and give each data a unique id 
+-- (notes) is my created collection
+
+// apply a midle ware to be able to write function in action generator
+1- install thunk  => npm i redux-thunk
+2- import it in storeconfig file and use applymidleware api in store
+
+// make loading page till my data come from database
+1- create a startSetDriver action and import it in app.js
+2- add a promise so that when the data completly come 
+from database it shown after loadding page
+3-

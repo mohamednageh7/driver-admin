@@ -1,7 +1,7 @@
 // webpack production mode
 1-write env in package.json file and webpack confign file
 
-// remove my stle file from bundel.js
+// remove my style file from bundel.js
 1- install css extract plugin  =>  mini-css-extract-plugin
 
 // express server => server our public directory in production

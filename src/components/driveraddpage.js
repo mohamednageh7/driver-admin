@@ -1,18 +1,29 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import{addDrivers} from '../actions/driverListActions';
+import{startAddDriver} from '../actions/driverListActions';
 import DriverForm from './driverForm';
 
-const DriverAddPage = (props) => (
+
+export class DriverAddPage extends React.Component{
+    onSubmit= (driverList) => {
+        this.props.startAddDriver(driverList);
+        this.props.history.push('/');
+    }
+    render(){
+        return(
     <div>
         <h1>App Driver</h1>
         <DriverForm
-        onSubmit={(driver) => {
-            props.dispatch(addDrivers(driver));
-            props.history.push('/');
-        }}
-        />
+        onSubmit={this.onSubmit}
+        /> 
     </div>
-);
+        )}
+};
 
-export default connect()(DriverAddPage);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        startAddDriver: (driverList) => dispatch(startAddDriver(driverList))
+    }
+}
+
+export default connect(undefined,mapDispatchToProps)(DriverAddPage);

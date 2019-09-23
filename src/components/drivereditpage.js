@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {editDriver , removeDriver} from '../actions/driverListActions';
+import {editDriver , setRemoveDriver} from '../actions/driverListActions';
 import DriverForm from './driverForm';
 
 const DriverEditPage = (props) => {    
@@ -14,7 +14,7 @@ const DriverEditPage = (props) => {
         }}
         />
          <button onClick={() => {
-            props.dispatch(removeDriver({id: props.driver.id}));
+            props.dispatch(setRemoveDriver({id: props.driver.id}));
             props.history.push('/');
         }}>remove</button>
       </div>
